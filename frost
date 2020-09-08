@@ -1,0 +1,26 @@
+// This is basically a US Dvorak with some (mostly) Swedish accented characters added
+// å -> alt-gr a
+// ä -> alt-gr e
+// ö -> alt-gr o
+// é -> alt-gr u
+// ü -> alt-gr y
+
+default partial alphanumeric_keys
+xkb_symbols "dvorak" {
+    include "us(dvorak)"
+    include "level3(caps_switch)"
+    include "level3(ralt_switch)"
+
+    name[Group1] = "Swedish (Frost Dvorak)";
+
+    //             Unmodified       Shift           AltGr            Shift+AltGr
+
+    // // symbols row, left side
+    key <AD05> { [ y,               Y,              udiaeresis,      Udiaeresis ] };
+
+    // home row, left side
+    key <AC01> { [ a,               A,              aring,           Aring      ] };
+    key <AC02> { [ o,               O,              odiaeresis,      Odiaeresis ] };
+    key <AC03> { [ e,               E,              adiaeresis,      Adiaeresis ] };
+    key <AC04> { [ u,               U,              eacute,          Eacute     ] };
+};
